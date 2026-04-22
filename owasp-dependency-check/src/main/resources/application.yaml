@@ -1,3 +1,4 @@
+---
 spring:
   application:
-    name: owasp-dependency-check
+    name: "owasp-dependency-check"
