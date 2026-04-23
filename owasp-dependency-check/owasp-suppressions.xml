@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.4.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.4.xsd https://dependency-check.github.io/DependencyCheck/dependency-suppression.1.4.xsd">
+  <suppress>
+    <notes><![CDATA[
+        file name: log4j-core-2.14.1.jar
+        ]]></notes>
+    <packageUrl regex="true">^pkg:maven/org\.apache\.logging\.log4j/log4j-core@.*$</packageUrl>
+    <cve>CVE-2021-44228</cve>
+  </suppress>
+
+  <suppress>
+    <notes><![CDATA[
+    file name: log4j-core-2.14.1.jar
+    ]]></notes>
+    <packageUrl regex="true">^pkg:maven/org\.apache\.logging\.log4j/log4j-core@.*$</packageUrl>
+    <cve>CVE-2021-45046</cve>
+  </suppress>
+
+  <suppress>
+    <notes><![CDATA[
+    file name: log4j-core-2.14.1.jar
+    ]]></notes>
+    <packageUrl regex="true">^pkg:maven/org\.apache\.logging\.log4j/log4j-core@.*$</packageUrl>
+    <cve>CVE-2021-44832</cve>
+  </suppress>
+</suppressions>

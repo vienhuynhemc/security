@@ -44,6 +44,12 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>2.14.1</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -51,6 +57,28 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.owasp</groupId>
+        <artifactId>dependency-check-maven</artifactId>
+        <version>12.2.1</version>
+        <configuration>
+          <knownExploitedEnabled>false</knownExploitedEnabled>
+          <nvdApiKey>a3ae3039-1749-45db-ace1-d0d094c184e5</nvdApiKey>
+          <failBuildOnCVSS>7</failBuildOnCVSS>
+          <suppressionFiles>
+            <suppressionFile>owasp-suppressions.xml</suppressionFile>
+          </suppressionFiles>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>update-only</goal>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
 
       <!-- Spotless: https://github.com/diffplug/spotless -->
@@ -110,6 +138,7 @@
           <pom>
             <includes>
               <include>pom.xml</include>
+              <include>owasp-suppressions.xml</include>
             </includes>
             <sortPom>
               <expandEmptyElements>false</expandEmptyElements>
